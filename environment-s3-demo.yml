@@ -1,0 +1,11 @@
+name: s3-demo
+channels:
+- conda-forge
+dependencies:
+- python
+- pip
+- awscli
+- boto3
+- ipykernel
+- sunpy
+- aiapy

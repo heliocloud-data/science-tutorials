@@ -1,0 +1,14 @@
+name: your-project
+channels:
+- conda-forge
+- defaults
+dependencies:
+- python
+- ipykernel
+- pip
+- numpy
+- matplotlib
+- distributed
+- jupyterlab
+- jupyter-server-proxy
+- pandas
