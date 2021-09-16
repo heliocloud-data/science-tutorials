@@ -1,0 +1,9 @@
+name: awscli
+channels:
+- conda-forge
+dependencies:
+- python
+- pip
+- awscli
+- boto3
+- ipykernel
