@@ -1,11 +1,12 @@
 name: s3-demo
 channels:
 - conda-forge
+- default
 dependencies:
 - python
 - pip
 - awscli
 - boto3
 - ipykernel
-- sunpy
-- aiapy
+- astropy
+- cdflib
