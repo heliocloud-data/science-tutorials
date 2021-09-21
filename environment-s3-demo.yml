@@ -3,10 +3,19 @@ channels:
 - conda-forge
 - default
 dependencies:
-- python
+- python==3.8.8
 - pip
-- awscli
-- boto3
-- ipykernel
 - astropy
+- awscli
+- python-blosc=1.10.2
+- boto3
 - cdflib
+- cloudpickle==1.6.0
+- dask==2021.03.1
+- dask-gateway
+- dask-kubernetes
+- dask-labextension
+- distributed==2021.03.1
+- ipykernel
+- lz4
+- numpy==1.20.2
