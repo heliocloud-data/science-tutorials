@@ -4,11 +4,9 @@ channels:
 - defaults
 dependencies:
 - python
-- ipykernel
-- pip
-- numpy
-- matplotlib
 - distributed
-- jupyterlab
-- jupyter-server-proxy
+- ipykernel
 - pandas
+- pip
+- matplotlib
+- numpy
