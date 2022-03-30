@@ -15,3 +15,4 @@ Items developed for the SMCE Heliophysics daskhub
 + [IDL examples](IDL_examples.ipynb) as a Notebook
 + [Accessing S3 from IDL](IDL-S3.ipynb) as a Notebook
 + [Accessing FITS/CDF/NetCDF from S3](S3_all_tests.ipynb) as a Notebook
++ Using SolarSoft via IDL is available for testing (only) on HelioCloud in /efs/skantunes/IDLSSWtest.ipynb
