@@ -4,6 +4,38 @@ Tackling the 'who will use HelioCloud' and 'why use HelioCloud' through likelies
 
 ## Science Use Cases
 
+Themes: Access & Findability, Machine Learning, Big Data, Sharing Data & Code, Performance & HPC
+
+Access & Findability:
+* Quick look plots of events for multiple missions (general, WHPI)
+* Fit of 2-years of coronagraph data to make a 3D F-corona model (fitting)
+* Postdoc wants data but has no knowledge (nor interest) of pipelines
+* Visual selection of events/3D panning (HEKB, WHPI)
+* Prototyped on 1 month of data and now wants to run on full solar cycle (dev/ops)
+* Found/defined event, wants to find others in dataset
+
+Machine Learning
+* Found/defined event, wants to find others in dataset
+* Running algorithms on data (e.g. MMS), preprocessing to L3, standardizing and scaling
+* Testing different ML algorithms, playground
+* Flare detection
+* ML algorithm updating automatically as new data arrives
+
+Big Data
+* Data too big otherwise (Supermag 1 sec data, SDO's PB of size per mission)
+* 5TB MHD run outputs unshareable (also, GAMERA)
+* Data assimilation (model+reality)
+* Hyperspectral imageray (e.g. planetary, SDO images)
+* 'Anyone can run my model' (e.g. MHD, IDA4D)
+
+Sharing
+* 'Anyone can run my model' (e.g. MHD, IDA4D)
+* Storing processed data or analysis outputs, L3/L4 datasets
+
+Performance
+* Cloud is faster for existing work and IDE is easy to use
+* Code sharing (likely just use Git)
+* 'Use cloud not post-docs'
 
 ## IT Use Cases
 
