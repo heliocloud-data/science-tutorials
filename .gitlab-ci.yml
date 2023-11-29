@@ -1,0 +1,96 @@
+default:
+  image: python:3.9
+  services:
+  - docker:20.10.23-dind
+
+variables:
+  # When using dind service, you must instruct Docker to talk with
+  # the daemon started inside of the service. The daemon is available
+  # with a network connection instead of the default
+  # /var/run/docker.sock socket.
+  DOCKER_HOST: tcp://docker:2376
+  #
+  # The 'docker' hostname is the alias of the service container as described at
+  # https://docs.gitlab.com/ee/ci/services/#accessing-the-services.
+  # If you're using GitLab Runner 12.7 or earlier with the Kubernetes executor and Kubernetes 1.6 or earlier,
+  # the variable must be set to tcp://localhost:2376 because of how the
+  # Kubernetes executor connects services to the job container
+  # DOCKER_HOST: tcp://localhost:2376
+  #
+  # Specify to Docker where to create the certificates. Docker
+  # creates them automatically on boot, and creates
+  # `/certs/client` to share between the service and job
+  # container, thanks to volume mount from config.toml
+  DOCKER_TLS_CERTDIR: "/certs"
+  # These are usually specified by the entrypoint, however the
+  # Kubernetes executor doesn't run entrypoints
+  # https://gitlab.com/gitlab-org/gitlab-runner/-/issues/4125
+  DOCKER_TLS_VERIFY: 1
+  DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+  AWS_DEFAULT_REGION: us-east-1
+  AWS_ECR_REPOSITORY: 424120911029.dkr.ecr.us-east-1.amazonaws.com/helio-science-tutorials
+  AWS_ECR_PUBLIC_REPOSITORY: public.ecr.aws/q3h7b4o8/helio-science-tutorials
+
+
+stages:
+  - build
+  - push
+
+build:
+  stage: build
+  script:
+    - pip install awscli && aws --version
+    - curl -sSL https://get.docker.com/ | sh && docker --version
+    - docker build
+      --no-cache
+      --progress=plain
+      --label "org.opencontainers.image.title=$CI_PROJECT_TITLE"
+      --label "org.opencontainers.image.url=$CI_PROJECT_URL"
+      --label "org.opencontainers.image.created=$CI_JOB_STARTED_AT"
+      --label "org.opencontainers.image.revision=$CI_COMMIT_SHA"
+      --label "org.opencontainers.image.version=$CI_COMMIT_REF_NAME"
+      --tag ${AWS_ECR_REPOSITORY}:${CI_COMMIT_SHA}
+      .
+    - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_REPOSITORY}
+    - docker push ${AWS_ECR_REPOSITORY}:${CI_COMMIT_SHA}
+
+Push latest:
+  variables:
+    # We are just playing with Docker here. 
+    # We do not need GitLab to clone the source code.
+    GIT_STRATEGY: none
+  stage: push
+  only:
+    - master
+  script:
+    - (aws --version) || (pip install awscli && aws --version)
+    - (docker --version) || (curl -sSL https://get.docker.com/ | sh && docker --version)
+    # Pull the image from the previous build
+    - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_REPOSITORY}
+    - docker pull ${AWS_ECR_REPOSITORY}:${CI_COMMIT_SHA}
+    # Then we tag it "latest"
+    - docker tag ${AWS_ECR_REPOSITORY}:${CI_COMMIT_SHA} ${AWS_ECR_PUBLIC_REPOSITORY}:latest
+    # Annnd we push it.
+    - aws ecr-public get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_PUBLIC_REPOSITORY}
+    - docker push ${AWS_ECR_PUBLIC_REPOSITORY}:latest
+
+# Finally, the goal here is to Docker tag any Git tag
+# GitLab will start a new pipeline everytime a Git tag is created, which is pretty awesome
+Push tag:
+  variables:
+    # Again, we do not need the source code here. Just playing with Docker.
+    GIT_STRATEGY: none
+  stage: push
+  only:
+    - tags
+  script:
+    - (aws --version) || (pip install awscli && aws --version)
+    - (docker --version) || (curl -sSL https://get.docker.com/ | sh && docker --version)
+    # Pull the image from the previous build
+    - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_REPOSITORY}
+    - docker pull ${AWS_ECR_REPOSITORY}:${CI_COMMIT_SHA}
+    # Then we tag it "latest"
+    - docker tag ${AWS_ECR_REPOSITORY}:${CI_COMMIT_SHA} ${AWS_ECR_PUBLIC_REPOSITORY}:${CI_COMMIT_REF_NAME}
+    # Annnd we push it.
+    - aws ecr-public get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_PUBLIC_REPOSITORY}
+    - docker push ${AWS_ECR_PUBLIC_REPOSITORY}:${CI_COMMIT_REF_NAME}
