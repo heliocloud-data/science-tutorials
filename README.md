@@ -1,8 +1,8 @@
 # Guide to HelioCloud Tutorials
 S. Antunes (APL)
-October 2023
+December 2023
 
-There are many tutorials here in the GSFC HelioClound instance, and we'll help walk you through them. At this point we'll assume you're already in your account and able to run a Notebook.  We will walk you through an overview of SMCE, examples of data reads from AWS S3 storage, using Dask for compute power, and working in IDL.  We also include a link to a local copy of the PyHC summer school package tutorials for SunPy, SpacePy, AstroPy, HAPI, and others.
+HelioCloud is a cloud platform, an analysis cache of datasets, and an exploratory platform with tutorials to get researchers started. There are many tutorials here and we'll help walk you through them. At this point we'll assume you're already in your account and able to run a Notebook.  We will walk through examples of data reads from AWS S3 storage, using Dask for compute power, using the core PyHC packages in Python, and working in IDL.  We also include a link to a local copy of the PyHC summer school package tutorials for SunPy, SpacePy, AstroPy, HAPI, and others.
 
 The core HelioCloud notebooks to date are:
 1) basic file access of FITS, CDF and NetCDF data that is stored in AWS S3 cloud storage, in [S3-Access-Demo.ipynb](S3-Access-Demo.ipynb)
@@ -11,12 +11,17 @@ The core HelioCloud notebooks to date are:
 4) finding datasets and lists of data files within one more more HelioClouds, in the [CloudCatalog-Demo.ipynb](CloudCatalog-Demo.ipynb)
 5) extended example MMS: searching for MMS data by instrument name and time range, then analyzing and plotting them, in [MMS-Catalog-Demo.ipynb](MMS-Catalog-Demo.ipynb)
 6) extended example SDO: searching for SDO data then processing a large set on multiple CPUs via Dask and gathering the results, in [HelioCloud-SDO-Demo.ipynb](HelioCloud-SDO-Demo.ipynb)
+7) a brief 'everything' tutorial including how to do all the above in brief, and a walkthrough of each core PyHC package, in [Testing_Notebook.ipynb](Testing_Notebook.ipynb)
 
 We start off with the 'Science in the Browser' approach where the Juptyer Notebook suffices to find, analyze and plot data entirely within the cloud.  We also include additional material for power users who prefer to work in their own cloud VM or cloud console environment.
 
-## About SMCE
+## About HelioCloud, Notebooks, and Dask
 
-A necessary overview of this SMCE AWS environment is given in [Setup/Services_README notebook](Setup/Services_README.ipynb). 
+HelioCloud is a software stack enabling you to do research in the Amazon Web Services (AWS) high performance cloud from within your browser or laptop terminal.
+
+"Daskhub" is the name of the web-based Jupyter Notebook interface for most HelioCloud users, which enables running these notebooks.  'Dask' itself is a way to quickly parallelize your code by throwing it to multiple CPUs.  So Daskhub is a Notebook-based IDE that has access to dask 'burst' processing.
+
+"Jupyter Notebooks" aka Notebooks are a way to write code and descriptive text in the same document.  Notebooks also store output, and can serve as a publication of both code, documentation and results.  The intent is that a Notebook that works in one HelioCloud will work in other HelioClouds.
 
 If you are interested in how to write in Jupyter notebooks to make attractive presentation-ready pages, read the [Additional/OutputTypes notebook](Additional/OutputTypes.ipynb)
 
@@ -28,6 +33,10 @@ S3 stands for "Simple Storage Service," which provides object storage for for AW
 It allows people to query and access data from a common location reference. The buckets can be made web accessible to users outside of daskhub if web access is enabled.
 
 S3 buckets are individual storage elements.
+
+## Everything at Once
+
+If you are already familiar with Python and PyHC, the  brief 'everything' tutorial in [Testing_Notebook.ipynb](Testing_Notebook.ipynb) will show you how to (briefly) do typical desktop science tasks, but in the cloud.
 
 ## Science Part 1: Cloud storage and using multiple CPUs in Python
 
