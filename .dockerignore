@@ -1,0 +1,13 @@
+# Docker
+.dockerignore
+.docker
+Dockerfile
+
+# CI
+.gitlab-ci.yml
+
+# Local files
+*.sh
+.idea
+
+
