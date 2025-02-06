@@ -64,7 +64,7 @@ Push latest:
     GIT_STRATEGY: none
   stage: push
   only:
-    - master
+    - main
   script:
     - (aws --version) || (pip install awscli && aws --version)
     - (docker --version) || (curl -sSL https://get.docker.com/ | sh && docker --version)
