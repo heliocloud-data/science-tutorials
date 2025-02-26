@@ -13,7 +13,7 @@ The core HelioCloud notebooks to date are:
 4) combining accessing private or public S3 files with bursting via Dask in [S3-Dask-Demo.ipynb](S3-Dask-Demo.ipynb)
 5) finding datasets and lists of data files within one more more HelioClouds, in the [CloudCatalog-Demo.ipynb](CloudCatalog-Demo.ipynb)
 6) extended example MMS: searching for MMS data by instrument name and time range, then analyzing and plotting them, in [MMS-Catalog-Demo.ipynb](MMS-Catalog-Demo.ipynb)
-7) extended example SDO: searching for SDO data then processing a large set on multiple CPUs via Dask and gathering the results, in [HelioCloud-SDO-Demo.ipynb](HelioCloud-SDO-Demo.ipynb)
+7) extended example SDO: searching for SDO data then processing a large set on multiple CPUs via Dask and gathering the results, in [SDO-Demo.ipynb](SDO-Demo.ipynb)
 8) a brief 'everything' tutorial including how to do all the above in brief, and a walkthrough of each core PyHC package, in [Testing_Notebook.ipynb](Testing_Notebook.ipynb)
 
 We start off with the 'Science in the Browser' approach where the Juptyer Notebook suffices to find, analyze and plot data entirely within the cloud.  We also include additional material for power users who prefer to work in their own cloud VM or cloud console environment.
