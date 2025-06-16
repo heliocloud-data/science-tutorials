@@ -30,6 +30,8 @@ variables:
   AWS_DEFAULT_REGION: us-east-1
   AWS_ECR_REPOSITORY: 424120911029.dkr.ecr.us-east-1.amazonaws.com/helio-science-tutorials
   AWS_ECR_PUBLIC_REPOSITORY: public.ecr.aws/q3h7b4o8/helio-science-tutorials
+  PUBLIC_REPO: https://github.com/heliocloud-data/science-tutorials.git
+  
 
 
 stages:
@@ -49,6 +51,8 @@ build:
       --label "org.opencontainers.image.created=$CI_JOB_STARTED_AT"
       --label "org.opencontainers.image.revision=$CI_COMMIT_SHA"
       --label "org.opencontainers.image.version=$CI_COMMIT_REF_NAME"
+      --build-arg PUBLIC_REPO=${PUBLIC_REPO}
+      --build-arg BRANCH=main
       --tag ${AWS_ECR_REPOSITORY}:${CI_COMMIT_SHA}
       .
     - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_REPOSITORY}
@@ -61,7 +65,7 @@ Push latest:
     GIT_STRATEGY: none
   stage: push
   only:
-    - master
+    - main
   script:
     - (aws --version) || (pip install awscli && aws --version)
     - (docker --version) || (curl -sSL https://get.docker.com/ | sh && docker --version)
