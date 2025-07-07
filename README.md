@@ -1,6 +1,6 @@
 # Guide to HelioCloud Tutorials
 S. Antunes (APL)
-December 2023
+July 2025
 
 HelioCloud is a cloud platform, an analysis cache of datasets, and an exploratory platform with tutorials to get researchers started. Our best introduction to 'why' is our [AGU_Demo-Populated.ipynb](AGU_Demo-Populated.ipynb) Notebook, which explains what HelioCloud can do and introduces a basic Python science example for looking at time-series data and at images.
 
@@ -8,13 +8,11 @@ There are many tutorials here and we'll help walk you through them. At this poin
 
 The core HelioCloud notebooks to date are:
 1) Overall intro in [AGU_Demo-Populated.ipynb](AGU_Demo-Populated.ipynb)
-2) basic file access of FITS, CDF and NetCDF data that is stored in AWS S3 cloud storage, in [S3-Access-Demo.ipynb](S3-Access-Demo.ipynb)
-3) 'bursting' a job onto multiple temporary CPUs in [Dask-Gateway-Example.ipynb](Dask-Gateway-Example.ipynb)
-4) combining accessing private or public S3 files with bursting via Dask in [S3-Dask-Demo.ipynb](S3-Dask-Demo.ipynb)
-5) finding datasets and lists of data files within one more more HelioClouds, in the [CloudCatalog-Demo.ipynb](CloudCatalog-Demo.ipynb)
-6) extended example MMS: searching for MMS data by instrument name and time range, then analyzing and plotting them, in [MMS-Catalog-Demo.ipynb](MMS-Catalog-Demo.ipynb)
-7) extended example SDO: searching for SDO data then processing a large set on multiple CPUs via Dask and gathering the results, in [HelioCloud-SDO-Demo.ipynb](HelioCloud-SDO-Demo.ipynb)
-8) a brief 'everything' tutorial including how to do all the above in brief, and a walkthrough of each core PyHC package, in [Testing_Notebook.ipynb](Testing_Notebook.ipynb)
+2) basic file access of FITS, CDF and NetCDF data that is stored in AWS S3 cloud storage, in [S3_Explained.ipynb](S3_Explained.ipynb)
+3) 'bursting' a job onto multiple temporary CPUs in [Dask+S3_Demo.ipynb](Dask+S3_Demo.ipynb)
+4) finding datasets and lists of data files within one more more HelioClouds, in the [CloudCatalog_Demo.ipynb](CloudCatalog_Demo.ipynb)
+5) extended example SDO: searching for SDO data then processing a large set on multiple CPUs via Dask and gathering the results, in [SDO_Demo.ipynb](SDO_Demo.ipynb)
+6) a brief 'everything' tutorial including how to do all the above in brief, and a walkthrough of each core PyHC package, in [Testing_Notebook.ipynb](Testing_Notebook.ipynb)
 
 We start off with the 'Science in the Browser' approach where the Juptyer Notebook suffices to find, analyze and plot data entirely within the cloud.  We also include additional material for power users who prefer to work in their own cloud VM or cloud console environment.
 
@@ -45,25 +43,17 @@ If you are already familiar with Python and PyHC, the  brief 'everything' tutori
 
 ## Science Part 1: Cloud storage and using multiple CPUs in Python
 
-Python practice examples for reading sample data in FITS, CDF or NetCDF that are stored in this cloud is in our [S3-Access-Demo notebook](S3-Access-Demo.ipynb). These make use of AstroPy for FITS files, cdflib for CDF files, and Xarray for NetCDF files.
+Python practice examples for reading sample data in FITS, CDF or NetCDF that are stored in this cloud is in our [S3-Explained notebook](S3-Explained.ipynb). These make use of AstroPy for FITS files, cdflib for CDF files, and Xarray for NetCDF files.
 
-Dask is software that lets you 'burst' a job onto multiple temporary CPUs by defining then using a cluster of CPUs to lazily parallelize jobs. Using Dask in a notebook is in [Dask-Gateway-Example notebook](Dask-Gateway-Example.ipynb)
-
-We then combine reading from cloud S3 storage then using Dask to 'burst' the problem solving in [S3-Dask-Demo.ipynb](S3-Dask-Demo.ipynb)
+Dask is software that lets you 'burst' a job onto multiple temporary CPUs by defining then using a cluster of CPUs to lazily parallelize jobs. Using Dask in a notebook is in [Dask+S3-Demo.ipynb](Dask+S3-Demo.ipynb), showing both generic Dask usage and an actual SDO calculation example case.
 
 ## Science Part 2: Big Data Sets
 
 Cloud means never having to download datasets. Instead, you find data across multiple HelioClouds and directly access it without downloading it locally.  The [CloudCatalog API](https://pypi.org/project/cloudcatalog/) on top of the CloudCatalog sharing standard enables finding and listing cloud-stored scientific datasets such as CDAWeb, SDO, MMS and others.
 
-Our initial example for finding datasets and lists of data files within one more more HelioClouds is in the [CloudCatalog-Demo.ipynb](CloudCatalog-Demo.ipynb)
+Our initial example for finding datasets and lists of data files within one more more HelioClouds is in the [CloudCatalog_Demo.ipynb](CloudCatalog_Demo.ipynb), using the MMS dataset.
 
-## Science Part 3: Using real MMS and SDO data
-
-We present two sample tasks wherein we first query the cloud for instrument data. We then pull a list of files for a given instrument and time range, then process it, all within the cloud (not using your local storage or laptop CPU).
-
-A serial example is searching for MMS data by instrument name and time range, then analyzing and plotting them, in the [MMS-Catalog-Demo notebook](MMS-Catalog-Demo.ipynb)
-
-We then add Dask 'burst' capabilities to tackle 2TB of data rapidly.  Here we search for SDO data then processing a large set on multiple CPUs via Dask and gathering the results, in the [HelioCloud-SDO-Demo notebook](HelioCloud-SDO-Demo.ipynb)
+We then add a big data task using Dask 'burst' capabilities to tackle 2TB of data rapidly.  Here we search for SDO data then processing a large set on multiple CPUs via Dask and gathering the results, in the [SDO_Demo notebook](SDO_Demo.ipynb)
 
 ## Working with IDL
 
@@ -75,6 +65,30 @@ Pushing data on or off S3 using SFTP is in [Setup/SFTP service notebook](Setup/S
 
 A simple "hello world" in Fortran is in the [Additional/fortran_helloworld notebook](Additional/fortran_helloworld.ipynb)
 
+An example of plotting a contributed dataset is shown in [Additional/EUVML_viewer](Additional/EUVML_viewer.ipynb)
+
 Updating your personal Conda environment is in the [Setup/Conda_instructions_for_cloud notebook](Setup/Conda_instructions_for_cloud.ipynb)
 
+A helper function for saving Portal-generated AWS keys into your local ~/.aws/credentials directory is in [Tools/Save_Credentials](Tools/Save_Credentials.ipynb)
+
+
 Testing if GPUs are enabled, in the[Additional/GPU-Info notebook](Additonal/GPU-Info.ipynb)
+
+# Sample PyHC Tutorials
+
+To get a feel for using a Notebook (whether in cloud or on your laptop), we provide an excerpt of tutorials from the PyHC 2022 Summer School.  This highlights using the standard packages, fetching data, and plotting where the cloud usage and laptop usage are identical.
+
+1) [AstroPy_FITS-files-demo.ipynb](pyhc/AstroPy_FITS-files-demo.ipynb)
+2) [HAPI_01.ipynb](pyhc/HAPI_01.ipynb) basics and
+[HAPI_03.ipynb](pyhc/HAPI_03.ipynb) plotting
+3) [Kamodo_04-Visualization.ipynb](pyhc/Kamodo_04-Visualization.ipynb)
+4) [PlasmaPy-tutorial-instructor.ipynb](pyhc/PlasmaPy-tutorial-instructor.ipynb)
+5) [PySPEDAS_Summer_School_2022.ipynb](pyhc/PySPEDAS_Summer_School_2022.ipynb)
+6) [SolarMach_notebook.ipynb](pyhc/SolarMach_notebook.ipynb)
+7) [SunPy_part-1-search-and-download_Instructor.ipynb](pyhc/SunPy_part-1-search-and-download_Instructor.ipynb), 
+[SunPy_part-2-data-structures_Instructor.ipynb](pyhc/SunPy_part-2-data-structures_Instructor.ipynb) and
+[SunPy_part-3-coordinates_Instructor.ipynb](pyhc/SunPy_part-3-coordinates_Instructor.ipynb)
+
+## About HelioCloud
+
+HelioCloud is cloud software for the Heliophysics research community.  HelioCloud is a time-saving tool for heliophysics researchers to rapidly access and analyze high-volume datasets from a web browser.  It includes easy-to-navigate cloud-based software with big data storage offers an innovative, streamlined approach for conducting research.  An Open Science framework breaks down barriers to collaboration by enabling multipoint access to shared data, code, and analysis tools in a secure environment.  You can download and install the software at your institution to connect with other HelioCloud communities and contribute to the project.  More at [https://heliocloud.org](https://heliocloud.org)
