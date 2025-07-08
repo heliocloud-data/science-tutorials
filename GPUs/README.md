@@ -19,3 +19,26 @@ In theory we can monitor using 'nvidia-smi-l 1' to see if/when GPU is invoked.  
 * HelioML_Chapter2 (DEM) |
 * HelioML_Chapter7 (MMS) | 
 
+## Release Schedule for GPU Tutorials (as of 7/2/25)
+
+Already released:
+* CPU_vs_GPU_Speed_Test.ipynb
+
+Due to release by 7/15/25:
+* Intro_GPUs_Tensorflow.ipynb
+* HelioML_GPU_Demo.ipynb
+
+Due to release by 7/31/25:
+* GPU_Dask_Cluster_Demo.ipynb
+* Virtual_GPU_Demo.ipynb
+
+Still need to be rewritten to use GPU
+* Boundary_simple.ipynb
+* Boundary_TensorFlow.ipynb
+* DST Clustering.ipynb
+* DST Outlier Detector.ipynb
+* skip_psf_deconvolution.ipynb
+
+Also note that GPU-Info.ipynb and GPU_advice.md will likely be absorbed by Intro_GPUs_Tensorflow.ipynb.
+
+Anything with "_testingspace.ipynb" is for non-releasable test code.
