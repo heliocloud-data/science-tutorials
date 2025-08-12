@@ -1,0 +1,400 @@
+{
+    "HAPI": "2.0",
+    "resourceURL": "https://cdaweb.gsfc.nasa.gov/misc/NotesO.html#OMNI2_H0_MRG1HR",
+    "contact": "J.H. King, N. Papitashvili @ ADNET, NASA GSFC",
+    "parameters": [
+        {
+            "name": "Time",
+            "length": 24,
+            "units": "UTC",
+            "type": "isotime",
+            "fill": null
+        },
+        {
+            "name": "Rot1800",
+            "description": "Bartels Rotation Number (half-hour midpoint)",
+            "units": "  ",
+            "type": "integer",
+            "fill": "9999"
+        },
+        {
+            "name": "IMF1800",
+            "description": "OMNI ID code for the source spacecraft for time-shifted IMF values (see OMNI documentation link for codes) (half-hour midpoint)",
+            "units": null,
+            "type": "integer",
+            "fill": "99"
+        },
+        {
+            "name": "PLS1800",
+            "description": "OMNI ID code for the source spacecraft for time-shifted IP plasma values (see OMNI documentation link for codes) (half-hour midpoint)",
+            "units": null,
+            "type": "integer",
+            "fill": "99"
+        },
+        {
+            "name": "IMF_PTS1800",
+            "description": "# fine time scale IMF points (half-hour midpoint)",
+            "units": null,
+            "type": "integer",
+            "fill": "999"
+        },
+        {
+            "name": "PLS_PTS1800",
+            "description": "# fine time scale plasma points (half-hour midpoint)",
+            "units": null,
+            "type": "integer",
+            "fill": "999"
+        },
+        {
+            "name": "ABS_B1800",
+            "description": "1AU IP Average B Field Magnitude, nT, (last currently-available OMNI B-field data Jan 09, 2025) (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "F1800",
+            "description": "1AU IP Magnitude of average field vector (nT) (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "THETA_AV1800",
+            "description": "1AU IP Latitude/Theta of average B vector (deg) (half-hour midpoint)",
+            "units": "Deg",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "PHI_AV1800",
+            "description": "1AU IP Longitude/Phi of average B vector (deg) (half-hour midpoint)",
+            "units": "Deg",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "BX_GSE1800",
+            "description": "1AU IP Bx (nT), GSE (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "BY_GSE1800",
+            "description": "1AU IP By (nT), GSE (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "BZ_GSE1800",
+            "description": "1AU IP Bz (nT), GSE (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "BY_GSM1800",
+            "description": "1AU IP By (nT), GSM (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "BZ_GSM1800",
+            "description": "1AU IP Bz (nT), GSM (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-ABS_B1800",
+            "description": "RMS deviation of average B magnitude (nT) (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-B1800",
+            "description": "RMS deviation of magnitude of the average vector field (nT) (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-Bx1800",
+            "description": "RMS deviation Bx (nT), GSE (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-By1800",
+            "description": "RMS deviation By (nT), GSE (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-Bz1800",
+            "description": "RMS deviation Bz (nT), GSE (half-hour midpoint)",
+            "units": "nT",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "T1800",
+            "description": "1AU IP Plasma Temperature, deg K, (last currently-available OMNI plasma data Jan 20, 2025) (half-hour midpoint)",
+            "units": "Deg K",
+            "type": "double",
+            "fill": "9999999.0"
+        },
+        {
+            "name": "N1800",
+            "description": "1AU IP Ion number density (per cc) (half-hour midpoint)",
+            "units": "Per cc",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "V1800",
+            "description": "1AU IP plasma flow speed (km/s) (half-hour midpoint)",
+            "units": "Km/s",
+            "type": "double",
+            "fill": "9999.0"
+        },
+        {
+            "name": "PHI-V1800",
+            "description": "1AU IP plasma flow direction longitude (deg),  phi (half-hour midpoint)",
+            "units": "Deg",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "THETA-V1800",
+            "description": "1AU IP plasma flow direction latitude (deg), theta (half-hour midpoint)",
+            "units": "Deg",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "Ratio1800",
+            "description": "1AU IP Alpha/proton ratio (half-hour midpoint)",
+            "units": null,
+            "type": "double",
+            "fill": "9.999"
+        },
+        {
+            "name": "Pressure1800",
+            "description": "1AU IP Flow pressure (nPa) (half-hour midpoint)",
+            "units": "nPa",
+            "type": "double",
+            "fill": "99.99"
+        },
+        {
+            "name": "SIGMA-T1800",
+            "description": "RMS deviation of plasma temperature (deg k) (half-hour midpoint)",
+            "units": "Deg K",
+            "type": "double",
+            "fill": "9999999.0"
+        },
+        {
+            "name": "SIGMA-N1800",
+            "description": "RMS deviation of ion number density (per cc) (half-hour midpoint)",
+            "units": "Per cc",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-V1800",
+            "description": "RMS deviation in plasma flow velocity (km/s) (half-hour midpoint)",
+            "units": "Km/s",
+            "type": "double",
+            "fill": "9999.0"
+        },
+        {
+            "name": "SIGMA-PHI-V1800",
+            "description": "RMS deviation in plasma flow  direction longitude (deg), phi (half-hour midpoint)",
+            "units": "Deg",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-THETA-V1800",
+            "description": "RMS deviation in plasma flow direction latitude (deg), theta (half-hour midpoint)",
+            "units": "Deg",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "SIGMA-ratio1800",
+            "description": "RMS deviation alpha/proton ratio (half-hour midpoint)",
+            "units": null,
+            "type": "double",
+            "fill": "9.999"
+        },
+        {
+            "name": "E1800",
+            "description": "1AU IP Electric Field (mV/m) (half-hour midpoint)",
+            "units": "mV/m",
+            "type": "double",
+            "fill": "999.99"
+        },
+        {
+            "name": "Beta1800",
+            "description": "1AU IP Plasma beta (half-hour midpoint)",
+            "units": null,
+            "type": "double",
+            "fill": "999.99"
+        },
+        {
+            "name": "Mach_num1800",
+            "description": "1AU IP Alfven mach number (half-hour midpoint)",
+            "units": null,
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "Mgs_mach_num1800",
+            "description": "1AU IP Magnetosonic mach number (half-hour midpoint)",
+            "units": null,
+            "type": "double",
+            "fill": "99.9"
+        },
+        {
+            "name": "PR-FLX_11800",
+            "description": "1AU Proton flux > 1 MeV, 1/(SQcm-ster-s), (last currently-available OMNI proton fluxes Mar 04, 2020) (half-hour midpoint)",
+            "units": "1/(SQcm-ster-s)",
+            "type": "double",
+            "fill": "999999.99"
+        },
+        {
+            "name": "PR-FLX_21800",
+            "description": "1AU Proton flux >2 MeV (1/(SQcm-ster-s)) (half-hour midpoint)",
+            "units": "1/(SQcm-ster-s)",
+            "type": "double",
+            "fill": "99999.99"
+        },
+        {
+            "name": "PR-FLX_41800",
+            "description": "1AU Proton flux >4 MeV (1/(SQcm-ster-s)) (half-hour midpoint)",
+            "units": "1/(SQcm-ster-s)",
+            "type": "double",
+            "fill": "99999.99"
+        },
+        {
+            "name": "PR-FLX_101800",
+            "description": "1AU Proton flux >10 MeV (1/(SQcm-ster-s)) (half-hour midpoint)",
+            "units": "1/(SQcm-ster-s)",
+            "type": "double",
+            "fill": "99999.99"
+        },
+        {
+            "name": "PR-FLX_301800",
+            "description": "1AU Proton flux >30 MeV (1/(SQcm-ster-s)) (half-hour midpoint)",
+            "units": "1/(SQcm-ster-s)",
+            "type": "double",
+            "fill": "99999.99"
+        },
+        {
+            "name": "PR-FLX_601800",
+            "description": "1AU Proton flux >60 MeV (1/(SQcm-ster-s)) (half-hour midpoint)",
+            "units": "1/(SQcm-ster-s)",
+            "type": "double",
+            "fill": "99999.99"
+        },
+        {
+            "name": "MFLX1800",
+            "description": "Magnetospheric Contamination of 1AU Proton Flux code (6=No,<=5 see OMNI documentation) (half-hour midpoint)",
+            "units": "(6=No,1=All,-1=n/a)",
+            "type": "integer",
+            "fill": "0"
+        },
+        {
+            "name": "R1800",
+            "description": "Daily sunspot number V2, from  http://sidc.oma.be/silso/datafiles/ (1963/001-2024/366) (half-hour midpoint)",
+            "units": null,
+            "type": "integer",
+            "fill": "999"
+        },
+        {
+            "name": "F10_INDEX1800",
+            "description": "F10.7 - Daily 10.7 cm solar radio flux, units: 10**(-22) Joules/second/square-meter/Hertz, from NGDC (1963/001-2025/023), (half-hour midpoint)",
+            "units": " ",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "KP1800",
+            "description": "Kp - 3-hour Kp*10 (Kp=1-,1,1+ corresponds to 7,10,13), fromNGDC (1963/001-2025/023) (half-hour midpoint)",
+            "units": null,
+            "type": "integer",
+            "fill": "99"
+        },
+        {
+            "name": "DST1800",
+            "description": "Dst - 1-hour Dst index (1963/001-2014/366), Provisional Dst (2021/001-2024/182), Quick-look Dst (2024/183-2025/023), from WDC Kyoto (half-hour midpoint)",
+            "units": "nT",
+            "type": "integer",
+            "fill": "99999"
+        },
+        {
+            "name": "AE1800",
+            "description": "AE - 1-hour AE-index,from WDC Kyoto (1963/001-1988/182), Provisional (1990/001-2019/365), from WDC Kyoto (half-hour midpoint)",
+            "units": "nT",
+            "type": "integer",
+            "fill": "9999"
+        },
+        {
+            "name": "AP_INDEX1800",
+            "description": "ap - 3-hour ap-index (1963/001-2025/023), from NGDC (half-hour midpoint)",
+            "units": "nT",
+            "type": "integer",
+            "fill": "999"
+        },
+        {
+            "name": "AL_INDEX1800",
+            "description": "AL - 1-hour AL-index, from WDC Kyoto (1963/001-1988/182), Provisional (1990/001-2018/059), from WDC Kyoto (half-hour midpoint)",
+            "units": "nT",
+            "type": "integer",
+            "fill": "99999"
+        },
+        {
+            "name": "AU_INDEX1800",
+            "description": "AU - 1-hour AU-index,from WDC Kyoto (1963/001-1988/182), Provisional (1990/001-2018/059), from WDC Kyoto (half-hour midpoint)",
+            "units": "nT",
+            "type": "integer",
+            "fill": "99999"
+        },
+        {
+            "name": "PC_N_INDEX1800",
+            "description": "PC - 1-hour Polar Cap index (North, Thule station), from NGDC (Final 1975/001-2023/365) (half-hour midpoint)",
+            "units": " ",
+            "type": "double",
+            "fill": "999.9"
+        },
+        {
+            "name": "Solar_Lyman_alpha1800",
+            "description": "Solar Lyman-alpha (1963/001-2025/020) (half-hour midpoint)",
+            "units": "W/m^2",
+            "type": "double",
+            "fill": "0.999999"
+        },
+        {
+            "name": "Proton_QI1800",
+            "description": "Solar wind (magnetic energy density)/(kinetic energy density) (half-hour midpoint)",
+            "units": " ",
+            "type": "double",
+            "fill": "9.9999"
+        }
+    ],
+    "startDate": "1963-01-01T00:00:00Z",
+    "stopDate": "2025-01-24T16:00:00Z",
+    "status": {
+        "code": 1200,
+        "message": "OK"
+    },
+    "x_server": "https://cdaweb.gsfc.nasa.gov/hapi",
+    "x_dataset": "OMNI2_H0_MRG1HR"
+}
