@@ -2,13 +2,13 @@
 S. Antunes (APL)
 March 10, 2026
 
-HelioCloud is a cloud platform, an analysis cache of datasets, and an exploratory platform with tutorials to get researchers started. Our best introduction to 'why' is our [02_AGU_Demo-Populated.ipynb](02_AGU_Demo-Populated.ipynb) Notebook, which explains what HelioCloud can do and introduces a basic Python science example for looking at time-series data and at images.
+HelioCloud is a cloud platform, an analysis cache of datasets, and an exploratory platform with tutorials to get researchers started. Our best introduction to 'why' is our [02b_AGU_Demo-Populated.ipynb](02b_AGU_Demo-Populated.ipynb) Notebook, which explains what HelioCloud can do and introduces a basic Python science example for looking at time-series data and at images.
 
 There are many tutorials here and we'll help walk you through them. At this point we'll assume you're already in your account and able to run a Notebook.  We will walk through examples of data reads from AWS S3 storage, using Dask for compute power, using the core PyHC packages in Python, and working in IDL.  We also include a link to a local copy of the PyHC summer school package tutorials for SunPy, SpacePy, AstroPy, HAPI, and others.  Also advice for using GPUs to speed calculations. And the ability to ask AIs to help you with your code.
 
 The core HelioCloud notebooks to date are:
 1) A brief 'everything' tutorial including how to do all the below in brief, and a walkthrough of each core PyHC package, in [01_Testing_Notebook.ipynb](01_Testing_Notebook.ipynb)
-2) More detailed intro in [02_AGU_Demo-Populated.ipynb](02_AGU_Demo-Populated.ipynb)
+2) More detailed intro in our AGU Demo notebook, available as [02b_AGU_Demo-Populated.ipynb](02b_AGU_Demo-Populated.ipynb) or in the run-it-yourself [02a_AGU_Demo-Base.ipynb)](02a_AGU_Demo-Bare.ipynb)
 3) Using AWS S3 cloud storage, with basic file access of FITS, CDF and NetCDF data stored in S3, in [03_S3_Explained.ipynb](03_S3_Explained.ipynb)
 4) 'bursting' a job onto multiple temporary CPUs using Dask in [04_Dask_Explained.ipynb](04_Dask_Explained.ipynb)
 5) Use of CloudCatalog for finding and exploring datasets across all HelioClouds, in the [05_CloudCatalog_Demo.ipynb](05_CloudCatalog_Demo.ipynb)
@@ -49,7 +49,7 @@ HelioCloud has 1.5PB of data available in public S3 for you, including all of CD
 
 If you are already familiar with Python and PyHC, the  brief 'everything' tutorial in [01_Testing_Notebook.ipynb](01_Testing_Notebook.ipynb) will show you how to (briefly) do typical desktop science tasks, but in the cloud.
 
-If you are new to everything, look at our short [02_AGU_Demo-Populated.ipynb](02_AGU_Demo-Populated.ipynb) tutorial.
+If you are new to everything, look at our short [02b_AGU_Demo-Populated.ipynb](02b_AGU_Demo-Populated.ipynb) tutorial or in the run-it-yourself [02a_AGU_Demo-Base.ipynb)](02a_AGU_Demo-Bare.ipynb)
 
 
 ## Science Part 1: Cloud storage and using multiple CPUs in Python
@@ -97,7 +97,7 @@ Updating your personal Conda environment is in the [Setup/Conda_instructions_for
 
 A helper function for saving Portal-generated AWS keys into your local ~/.aws/credentials directory is in [Tools/Save_Credentials](Tools/Save_Credentials.ipynb)
 
-Testing if GPUs are enabled, in the[Additional/GPU-Info notebook](Additonal/GPU-Info.ipynb)
+Testing if GPUs are enabled, in the [Additional/GPU-Info notebook](Additional/GPU-Info.ipynb)
 
 # Sample PyHC Tutorials
 
